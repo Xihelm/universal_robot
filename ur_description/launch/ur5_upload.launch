@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="limited" default="false"/>
-  
+  <arg name="tra_z"/>
+  <arg name="tra_y"/>
+  <arg name="tra_x"/>
+  <arg name="ori_p"/>
+  <arg name="ori_r"/>
+  <arg name="ori_y"/>
+  <arg name="cad_name"/>
   <param unless="$(arg limited)" name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_description)/urdf/ur5_robot.urdf.xacro'" />
   <param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_description)/urdf/ur5_joint_limited_robot.urdf.xacro'" />
 </launch>
