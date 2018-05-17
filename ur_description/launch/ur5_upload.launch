@@ -8,6 +8,7 @@
   <arg name="ori_r"/>
   <arg name="ori_y"/>
   <arg name="cad_name"/>
-  <param unless="$(arg limited)" name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_description)/urdf/ur5_robot.urdf.xacro'" />
-  <param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro --inorder '$(find ur_description)/urdf/ur5_joint_limited_robot.urdf.xacro'" />
-</launch>
+  
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omatai_arm)/urdf/ur5_robot.urdf.xacro' limited:=$(arg limited) cad_name:=$(arg cad_name) tra_x:=$(arg tra_x) tra_y:=$(arg tra_y) tra_z:=$(arg tra_z) ori_r:=$(arg ori_r) ori_p:=$(arg ori_p) ori_y:=$(arg ori_y)"/>
+  
+</launch> 
